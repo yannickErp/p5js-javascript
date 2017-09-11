@@ -1,0 +1,22 @@
+function setup() {
+  createCanvas(800, 600);
+}
+
+function draw() {
+  //fill(255, 2);
+  //rect(0, 0, width, height);
+  for (var i = 0; i <= 400; i++) {
+    //background(255);
+
+    noStroke();
+    var r = map(mouseX, 0, 800, 0, 255);
+    var g = map(mouseY, 0, 800, 0, 255);
+    if (mouseX > mouseY) {
+      var b = map(mouseY / mouseX, 0, 1, 0, 255);
+    } else {
+      var b = map(mouseX / mouseY, 0, 1, 0, 255);
+    }
+    fill(r, g, b, 80);
+    ellipse(mouseX + random(-1, 1) * random(0, 20), mouseY + random(-1, 1) * random(0, 20), 35, 35);
+  }
+}
